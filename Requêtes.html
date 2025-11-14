@@ -29,10 +29,55 @@
     <!-- CHANGEZ LE TEXTE ET L'IMAGE -->
         <section class="requêtes">
             <div class="requête">
-                <div class="titre">Requête 1 : Afficher les utilisateurs (Soufiane)</div>
-                    <p>Cette requête permet d’afficher la liste complète des utilisateurs.</p>
-                <div class="extrait-sql"><p> bla bla bla.sql</p></div>
-                <img class="img-requête" src="Assets/Images/placeholders-sql-resultat.png" alt="image-placeholders">
+                <div class="titre">Requête 1 : La requête recherche les clients situés dans le même pays que les fournisseurs. (Soufiane)</div>
+                    <p>Cette requête est utile pour optimiser la logistique et réduire les coûts de transport. Elle permet aussi d’identifier les fournisseurs les plus proches géographiquement des clients, améliorant ainsi les délais de livraison. Elle aide également KDou à établir des partenariats locaux plus efficaces. </p>
+                <div class="extrait-sql"><p> SELECT DISTINCT
+
+                    C.CodeCli,
+
+                    C.Societe AS ClientSociete,
+
+                    C.Contact AS ClientContact,
+
+                    C.Adresse AS ClientAdresse,
+
+                    C.Ville AS ClientVille,
+
+                    C.CodePostal AS ClientCodePostal,
+
+                    P.PaysFR AS Pays,
+
+
+
+                    F.NoFour,
+
+                    F.Societe AS FournisseurSociete,
+
+                    F.Contact AS FournisseurContact,
+
+                    F.Adresse AS FournisseurAdresse,
+
+                    F.Ville AS FournisseurVille,
+
+                    F.Region AS FournisseurRegion,
+
+                    F.CP AS FournisseurCodePostal,
+
+                    F.Tel AS FournisseurTel
+
+                    FROM
+
+                    (Clientele AS C
+
+                    INNER JOIN Pays AS P
+
+                    ON C.NoPays = P.NoPays)
+
+                    INNER JOIN Fournisseur AS F
+
+                    ON F.NoPays = C.NoPays; </p></div>
+                <img class="img-requête" src="Assets/Images/RSoufiane1.png" alt="image-placeholders">
+
         </div>
             <div class="requête">
                 <div class="titre">Requête 2 : Ajouter un utilisateur (Edan)</div>
@@ -47,10 +92,14 @@
                     <img class="img-requête" src="Assets/Images/placeholders-sql-resultat.png" alt="image-placeholders">
             </div>
             <div class="requête">
-                <div class="titre">Requête 4 : Trier les utilisatuer (Trevin)</div>
-                    <p >Cette requête permet de trier les utilisateurs.</p>
-                <div class="extrait-sql"><p> bla bla bla.sql</p></div>
-                <img class="img-requête" src="Assets/Images/placeholders-sql-resultat.png" alt="image-placeholders">
+                <div class="titre">Requête 4 : On cherche dans le pays ciblé, les clients qui habitent dans la même ville et qui partagent le même code postal.  (Trevin)</div>
+                    <p >En vue de la préservation de l'environnement, on essaye de réduire la quantité de livraison au maximum. Donc, en prenant en compte la proximité géographique de chacun de nos clients, il sera possible d'optimiser le nombre de livraison afin d'émettre moins de gaz à effet de serre..</p>
+                <div class="extrait-sql"><p> SELECT C.Contact AS Client_1, C.Ville, C.CodePostal, Cl.Contact AS Client_2
+
+                    FROM Clientele AS C INNER JOIN Clientele AS Cl ON C.CodePostal = Cl.CodePostal AND C.CodeCli <> Cl.CodeCli
+
+                    ORDER BY C.Ville, C.CodePostal; </p></div>
+                <img class="img-requête" src="Assets/Images/RTrevin4.png" alt="image-placeholders">
             </div>
 
         </section>

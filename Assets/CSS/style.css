@@ -77,7 +77,7 @@ nav {
 }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .nav-links {
         position: absolute; /* Fait en sorte que les liens de la nav ne soivent pas embêter par  */
         top: 60px; /* décalé juste sous la nav */
