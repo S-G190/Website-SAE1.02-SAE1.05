@@ -26,8 +26,6 @@
     </div>
 </nav>
 <h1>Mission 3</h1>
-
-
 <p class="boite-texte">La troisième mission, enfin, a exploité la nouvelle version enrichie de la base de données pour produire des indicateurs de gestion pertinents : marges, coûts, relations entre clients, regroupements de livraisons ou encore analyse des fournisseurs par pays.</p>
 <h2> Indicateur (Réponses aux questions) </h2>
 <section class="requêtes">
@@ -100,6 +98,68 @@
         </p></div>
         <img class="img-requête" src="Assets/Images/M3REF4.png" alt="résultat-sql">
     </div>
+</section>
+<h2> Indicateur individuels / par notre groupe </h2>
+<section class="requêtes">
+            <div class="requête">
+                <div class="titre">Indicateur 1 : Clients géographiquement proches</div>
+                <p>Identifier les clients situés dans la même ville et partageant le même code postal pour optimiser les livraisons et réduire les émissions de CO₂.</p>
+                <div class="extrait-sql"><p>SELECT C.Contact AS Client_1, C.Ville, C.CodePostal, Cl.Contact AS Client_2
+                    FROM Clientele AS C
+                    INNER JOIN Clientele AS Cl ON C.CodePostal = Cl.CodePostal AND C.CodeCli <> Cl.CodeCli
+                    ORDER BY C.Ville, C.CodePostal;
+                    </p></div>
+                <img class="img-requête" src="Assets/Images/M3REF1.png" alt="résultat-sql">
+            </div>
+            <div class="requête">
+                <div class="titre">Indicateur 2 : Clients et fournisseurs dans le même pays</div>
+                <p>Lister les clients situés dans le même pays que leurs fournisseurs pour réduire les coûts logistiques et optimiser les délais de livraison.</p>
+                <div class="extrait-sql"><p>SELECT DISTINCT
+                    C.CodeCli, C.Societe AS ClientSociete, C.Contact AS ClientContact,
+                    C.Adresse AS ClientAdresse, C.Ville AS ClientVille, C.CodePostal AS ClientCodePostal,
+                    P.PaysFR AS Pays,
+                    F.NoFour, F.Societe AS FournisseurSociete, F.Contact AS FournisseurContact,
+                    F.Adresse AS FournisseurAdresse, F.Ville AS FournisseurVille, F.Region AS FournisseurRegion,
+                    F.CP AS FournisseurCodePostal, F.Tel AS FournisseurTel
+                    FROM (Clientele AS C
+                    INNER JOIN Pays AS P ON C.NoPays = P.NoPays)
+                    INNER JOIN Fournisseur AS F ON F.NoPays = C.NoPays;
+                </p></div>
+            <img class="img-requête" src="Assets/Images/M3REF1.png" alt="résultat-sql">
+            </div>
+            <div class="requête">
+                <div class="titre">Indicateur 3 : Optimisation des trajets selon quantité commandée</div>
+                <p>Afficher les commandes avec quantités supérieures à 50 afin de planifier des trajets adaptés et économiser du CO₂, en tenant compte des villes des clients et fournisseurs.</p>
+                <div class="extrait-sql">SELECT Cl.Societe AS NomClient, Cl.Ville AS VilleClient, Co.[N° commande],
+                    DC.Quantité, P.QteParUnit, F.Ville AS VilleFournisseur, F.Societe AS NomFournisseur
+                    FROM (((DetailCommande AS DC
+                    INNER JOIN Produit AS P ON DC.[Réf Produit] = P.RefProd)
+                    INNER JOIN Commande AS Co ON Co.[N° commande] = DC.[N° commande])
+                    INNER JOIN Clientele AS Cl ON Cl.CodeCli = Co.CodeCli)
+                    INNER JOIN Fournisseur AS F ON F.NoFour = P.NoFour
+                    WHERE DC.Quantité > 50;
+                    <p>
+                </p></div>
+                <img class="img-requête" src="Assets/Images/M3REF1.png" alt="résultat-sql">
+            </div>
+            <div class="requête">
+                <div class="titre">Indicateur 4 : Optimisation et l'organisation des trajet en avion et bateau en dehors de l’UE.</div>
+                <p>La recherche de commande avec des produit de faible quantité et nécessaire pour le rangement des conteneurs lors du transports des marchandises en bateau ou avion.
+
+                </p>
+                <div class="extrait-sql">SELECT Cl.Societe AS NomClient, Cl.Ville AS VilleClient, Co.[N° commande], DC.Quantité, P.QteParUnit, F.Ville AS VilleFournisseur, F.Societe AS NomFournisseur
+                    FROM ((((DetailCommande AS DC INNER JOIN Produit AS P ON DC.[Réf Produit] = P.RefProd) INNER JOIN Commande AS Co ON Co.[N° commande] = DC.[N° commande]) INNER JOIN Clientele AS Cl ON Cl.CodeCli = Co.CodeCli) INNER JOIN Fournisseur AS F ON F.NoFour = P.NoFour) INNER JOIN Pays ON F.NoPays = Pays.NoPays
+                    WHERE DC.Quantité < 10 AND Pays.UE = "Hors"
+                    <p>
+                </p></div>
+            <img class="img-requête" src="Assets/Images/M3REF1.png" alt="résultat-sql">
+            </div>
+
+
+
+
+
+
 </section>
 
 

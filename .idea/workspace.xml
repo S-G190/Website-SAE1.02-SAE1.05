@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c7e9e0e-f1d8-4ccd-9b85-67a85c3ab197" name="Changes" comment="finitions m1 et m2">
+    <list default="true" id="8c7e9e0e-f1d8-4ccd-9b85-67a85c3ab197" name="Changes" comment="debut m3 et finitions conclusion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Screenshot 2025-11-15 174730.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/M3REF1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Screenshot 2025-11-15 174943.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/M3REF2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Screenshot 2025-11-15 181052.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/M3REF4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/Screenshot 2025-11-15 182349.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images/M3REF3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conclusion.html" beforeDir="false" afterPath="$PROJECT_DIR$/Conclusion.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mission 3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mission 3.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +79,7 @@
       <workItem from="1763141281135" duration="510000" />
       <workItem from="1763141796905" duration="592000" />
       <workItem from="1763207905636" duration="853000" />
-      <workItem from="1763220469698" duration="8361000" />
+      <workItem from="1763220469698" duration="9379000" />
     </task>
     <task id="LOCAL-00001" summary="ajout nouvelles req">
       <option name="closed" value="true" />
@@ -116,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763233321162</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="debut m3 et finitions conclusion">
+      <option name="closed" value="true" />
+      <created>1763234622517</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1763234622517</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +131,7 @@
     <MESSAGE value="ajout nouvelles req" />
     <MESSAGE value="changement de texte" />
     <MESSAGE value="finitions m1 et m2" />
-    <option name="LAST_COMMIT_MESSAGE" value="finitions m1 et m2" />
+    <MESSAGE value="debut m3 et finitions conclusion" />
+    <option name="LAST_COMMIT_MESSAGE" value="debut m3 et finitions conclusion" />
   </component>
 </project>
