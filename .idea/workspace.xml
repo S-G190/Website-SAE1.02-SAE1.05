@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c7e9e0e-f1d8-4ccd-9b85-67a85c3ab197" name="Changes" comment="ajout nouvelles req" />
+    <list default="true" id="8c7e9e0e-f1d8-4ccd-9b85-67a85c3ab197" name="Changes" comment="changement de texte">
+      <change afterPath="$PROJECT_DIR$/Assets/Images/M1REF1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Images/M1REF2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Images/Screenshot 2025-11-15 172542.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Images/Screenshot 2025-11-15 172905.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Images/Screenshot 2025-11-15 174730.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Images/Screenshot 2025-11-15 174943.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Images/Screenshot 2025-11-15 181052.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Images/Screenshot 2025-11-15 182349.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Images/arename.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CSS/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mission 1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mission 1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,6 +89,7 @@
       <workItem from="1763141281135" duration="510000" />
       <workItem from="1763141796905" duration="592000" />
       <workItem from="1763207905636" duration="853000" />
+      <workItem from="1763220469698" duration="5826000" />
     </task>
     <task id="LOCAL-00001" summary="ajout nouvelles req">
       <option name="closed" value="true" />
@@ -84,7 +99,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763142193643</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="changement de texte">
+      <option name="closed" value="true" />
+      <created>1763220489768</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763220489768</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,6 +115,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ajout nouvelles req" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout nouvelles req" />
+    <MESSAGE value="changement de texte" />
+    <option name="LAST_COMMIT_MESSAGE" value="changement de texte" />
   </component>
 </project>

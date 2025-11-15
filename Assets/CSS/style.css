@@ -211,23 +211,35 @@ table img {
     display: block;        /* évite les espaces indésirables sous l’image */
 }
 
+h1, h2, h3 {
+    display: block;      /* garde le flux normal */
+    text-align: center;  /* centre horizontalement */
+    margin: 20px auto;   /* espace autour du titre */
+}
 h1 {
     padding: 20px;
     margin: 20px;
     border: olive 2px solid;
-    display: inline-flex;
+
 }
 h2 {
     padding: 20px;
     margin: 20px;
     border: olive 2px dashed;
     display: inline-flex;
-    justify-content: center;
+
+}
+h3 {
+    padding: 20px;
+    margin: 20px;
+    border: olive 2px solid;
+    display: inline-flex;
+
 }
 .boite-texte {
     background-color: rgba(128, 128, 128, 0.3); /* gris semi-transparent */
     border-radius: 8px;                         /* coins arrondis */
-    display: inline-block;                      /* la boîte s'adapte à la taille du texte */
+    display: block;                      /* la boîte s'adapte à la taille du texte */
     color: #222;                                /* texte lisible sur fond clair */
     backdrop-filter: blur(4px);                 /* effet de flou derrière (optionnel, joli effet verre) */
     padding: 20px;
@@ -238,4 +250,15 @@ h2 {
     height: auto;            /* garde ses proportions */
     border-radius: 10px;      /* coins arrondis */
     object-fit: cover;       /* rogne si nécessaire */
+}
+ul {
+    list-style-type: square;
+    padding: 20px;
+    margin: 20px;
+}
+ul img {
+    max-width: 100%;    /* l’image ne dépassera jamais la largeur du parent */
+    height: auto;       /* garde les proportions */
+    display: flex;     /* supprime les espaces sous l’image */
+    margin: 5px 0;      /* petit espace vertical entre texte et image */
 }
