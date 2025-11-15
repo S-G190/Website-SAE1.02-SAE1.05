@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c7e9e0e-f1d8-4ccd-9b85-67a85c3ab197" name="Changes" comment="m3 finitions">
-      <change afterPath="$PROJECT_DIR$/Assets/Images/SPREF3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Images/SPREF4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mission 3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mission 3.html" afterDir="false" />
-    </list>
+    <list default="true" id="8c7e9e0e-f1d8-4ccd-9b85-67a85c3ab197" name="Changes" comment="FINITIONS PROJETS" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +28,9 @@
     &quot;accountId&quot;: &quot;e64b636f-f49e-4b2c-a96b-37145f3689c8&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -80,7 +78,7 @@
       <workItem from="1763141281135" duration="510000" />
       <workItem from="1763141796905" duration="592000" />
       <workItem from="1763207905636" duration="853000" />
-      <workItem from="1763220469698" duration="10046000" />
+      <workItem from="1763220469698" duration="10371000" />
     </task>
     <task id="LOCAL-00001" summary="ajout nouvelles req">
       <option name="closed" value="true" />
@@ -130,7 +128,23 @@
       <option name="project" value="LOCAL" />
       <updated>1763235544259</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="FINITIONS PROJETS">
+      <option name="closed" value="true" />
+      <created>1763236225978</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1763236225978</updated>
+    </task>
+    <task id="LOCAL-00008" summary="FINITIONS PROJETS">
+      <option name="closed" value="true" />
+      <created>1763236284327</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1763236284327</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +156,7 @@
     <MESSAGE value="finitions m1 et m2" />
     <MESSAGE value="debut m3 et finitions conclusion" />
     <MESSAGE value="m3 finitions" />
-    <option name="LAST_COMMIT_MESSAGE" value="m3 finitions" />
+    <MESSAGE value="FINITIONS PROJETS" />
+    <option name="LAST_COMMIT_MESSAGE" value="FINITIONS PROJETS" />
   </component>
 </project>
