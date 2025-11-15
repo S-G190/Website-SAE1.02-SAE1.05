@@ -7,7 +7,7 @@
 </head>
 <body>
 <nav>
-    <div class="logo">MonSite</div>
+    <div class="logo">Rapport KDou</div>
 
     <!-- Le bouton burger -->
     <input type="checkbox" id="menu-toggle">
@@ -26,15 +26,85 @@
     </div>
 </nav>
 <h1>Mission 3</h1>
-<!-- CHANGEZ LE TEXTE ET L'IMAGE -->
-<p class="boite-texte">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur mauris sed sapien sollicitudin tincidunt. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec gravida orci molestie arcu accumsan, imperdiet accumsan justo egestas. Cras tempus turpis egestas orci convallis, eu viverra sem lobortis. Donec laoreet, massa quis egestas convallis, libero urna vehicula augue, quis vehicula libero ante ultrices felis. Sed dapibus vitae lorem at tempus. Sed ligula mi, faucibus eu dui a, lacinia faucibus elit. Aenean cursus vel urna non ultricies. Integer in commodo mauris, at lacinia diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris iaculis aliquam mi, nec eleifend diam molestie ut. Proin sem nunc, maximus a venenatis vitae, rutrum porttitor nisi. Mauris vel ultricies magna. Morbi pretium vulputate lacus nec vestibulum. Nunc massa odio, fermentum ac sodales et, rhoncus non risus. Aliquam tincidunt nunc maximus nibh faucibus, a efficitur justo sagittis. Mauris et tortor diam. Mauris rhoncus finibus lacinia. Cras a nisi justo. Maecenas bibendum volutpat est, et laoreet justo sollicitudin vel. Sed vel lectus euismod, commodo lacus sagittis, dignissim diam. Praesent a nisl sed ex convallis tempor.
 
-    Vivamus vulputate pulvinar elit vel aliquet. Vestibulum a fermentum lacus. Maecenas elementum efficitur sapien, sit amet consequat tortor iaculis aliquet. Donec facilisis erat laoreet nibh volutpat tristique. Quisque ac faucibus metus. Phasellus congue ex a sodales ornare. Etiam eu dictum neque. Donec dictum ut tortor molestie pulvinar. Vestibulum egestas, urna eget consectetur dictum, ex ipsum luctus sem, sed vulputate urna urna ut libero. Phasellus ultricies pellentesque libero vel lacinia.
 
-    Duis eleifend pharetra sapien vel ultrices. Proin euismod lobortis sapien ac faucibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum sed scelerisque orci. Nulla metus nibh, suscipit non elementum non, dictum quis felis. Aenean faucibus, turpis quis tristique mollis, ligula magna malesuada nisl, quis gravida orci ex vitae nisl. Sed laoreet fermentum augue vitae convallis. Nam sit amet magna a ex aliquet tempus at quis leo. Suspendisse nibh tortor, aliquet in interdum eu, mollis eu mi. Morbi erat risus, tristique at dui ut, facilisis accumsan ligula. Ut at massa tellus. Mauris mi massa, bibendum in euismod luctus, congue ac ipsum. Nam eu eros hendrerit, congue nisl at, porta lacus. Etiam sagittis semper urna, vitae sagittis libero fringilla id. Nunc varius odio eget nisl tempus, vitae vehicula ex tempus. Pellentesque hendrerit sagittis fringilla. <img src="Assets/Images/placeholders-sql-resultat.png" alt="image-placeholders"></p>
+<p class="boite-texte">La troisième mission, enfin, a exploité la nouvelle version enrichie de la base de données pour produire des indicateurs de gestion pertinents : marges, coûts, relations entre clients, regroupements de livraisons ou encore analyse des fournisseurs par pays.</p>
+<h2> Indicateur (Réponses aux questions) </h2>
+<section class="requêtes">
+    <div class="requête">
+        <div class="titre">Indicateur 1 : Chiffre d’affaires par catégorie (Boissons et Desserts)</div>
+        <p>On souhaite connaître le chiffre d’affaires généré par les catégories Boissons et Desserts de 2020 à 2022. Cela permet de suivre l’évolution des ventes et d’identifier les catégories les plus rentables.</p>
+        <div class="extrait-sql"><p>SELECT CCUR(SUM(C.CoefMarge * P.CoutAchat * DC.Quantité * (1-DC.[Remise (%)]))) AS ChiffreAff,
+            YEAR(Co.DateCde) AS Annee
+            FROM ((Categorie AS C
+            INNER JOIN Produit AS P ON C.CodeCateg = P.CodeCateg)
+            INNER JOIN DetailCommande AS DC ON P.RefProd = DC.[Réf produit])
+            INNER JOIN Commande AS Co ON DC.[N° commande] = Co.[N° commande]
+            WHERE C.NomCateg = "Boissons" OR C.NomCateg = "Desserts"
+            GROUP BY YEAR(Co.DateCde);
+        </p></div>
+        <img class="img-requête" src="Assets/Images/M3REF1.png" alt="résultat-sql">
+
+    </div>
+    <div class="requête">
+        <div class="titre">Indicateur 2 : Produits carnés non commandés</div>
+        <p>Identifier les produits de viande qui n’ont jamais été commandés. Utile pour gérer le stock, identifier les invendus et optimiser l’assortiment.</p>
+        <div class="extrait-sql"><p>SELECT COUNT(*) AS NbProduit
+            FROM (Produit AS P
+            LEFT JOIN DetailCommande AS DC ON DC.[Réf produit] = P.RefProd)
+            LEFT JOIN Categorie AS C ON C.CodeCateg = P.CodeCateg
+            WHERE C.NomCateg = 'Viandes'
+            AND P.RefProd NOT IN (
+            SELECT DISTINCT DC.[Réf produit]
+            FROM DetailCommande AS DC
+            );
+        </p></div>
+        <img class="img-requête" src="Assets/Images/M3REF2.png" alt="résultat-sql">
+    </div>
+    <div class="requête">
+        <div class="titre">Indicateur 3 : Produits importés des États-Unis à faible coût</div>
+        <p>Calculer le CA généré par les fournisseurs situés hors Union Européenne. Cela permet d’évaluer l’impact des fournisseurs internationaux sur les ventes.</p>
+        <div class="extrait-sql"><p>SELECT SUM(DC.Quantité * P.CoutAchat) AS CAhorsUE
+            FROM ((Produit AS P
+            INNER JOIN Fournisseur AS F ON F.NoFour = P.NoFour)
+            INNER JOIN DetailCommande AS DC ON DC.[Réf produit] = P.RefProd)
+            INNER JOIN Pays ON F.NoPays = Pays.NoPays
+            WHERE Pays.UE = "Hors";
+            LEFT JOIN (SELECT Commande.CodeCli, COUNT([N° commande]) AS NbrCommandesTotales
+            FROM Commande
+            GROUP BY Commande.CodeCli) AS CommandeClientPiloteTot ON pilote.CodeCli = CommandeClientPiloteTot.CodeCli
+            WHERE partenaire.CodeCliPart IS NOT NULL
+            AND CommandeClientPartenaireTot.NbrCommandesTotales = CommandeClientPiloteTot.NbrCommandesTotales;
+
+        </p></div>
+        <img class="img-requête" src="Assets/Images/M3REF3.png" alt="résultat-sql">
+    </div>
+    <div class="requête">
+        <div class="titre">Indicateur 4 : Comparaison commandes partenaires et sociétés pilotes</div>
+        <p>Comparer le nombre de commandes entre une société partenaire et sa société pilote pour vérifier la cohérence et l’activité commerciale.</p>
+        <div class="extrait-sql"><p>SELECT partenaire.CodeCli AS CodePartenaire, partenaire.Societe AS NomPartenaire,
+            CommandeClientPartenaireTot.NbrCommandesTotales AS NbrCommandePartenaire,
+            pilote.CodeCli AS CodePilote, pilote.Societe AS NomPilote,
+            CommandeClientPiloteTot.NbrCommandesTotales AS NbrCommandePilote
+            FROM ((Clientele AS partenaire
+            INNER JOIN Clientele AS pilote ON partenaire.CodeCliPart = pilote.CodeCli)
+            LEFT JOIN (SELECT Commande.CodeCli, COUNT([N° commande]) AS NbrCommandesTotales
+            FROM Commande
+            GROUP BY Commande.CodeCli) AS CommandeClientPartenaireTot ON partenaire.CodeCli = CommandeClientPartenaireTot.CodeCli)
+            LEFT JOIN (SELECT Commande.CodeCli, COUNT([N° commande]) AS NbrCommandesTotales
+            FROM Commande
+            GROUP BY Commande.CodeCli) AS CommandeClientPiloteTot ON pilote.CodeCli = CommandeClientPiloteTot.CodeCli
+            WHERE partenaire.CodeCliPart IS NOT NULL
+            AND CommandeClientPartenaireTot.NbrCommandesTotales = CommandeClientPiloteTot.NbrCommandesTotales;
+
+        </p></div>
+        <img class="img-requête" src="Assets/Images/M3REF4.png" alt="résultat-sql">
+    </div>
+</section>
+
 
 <footer>
-    <p>&copy; 2025 MonSite. Tous droits réservés.</p>
+    <p>&copy; 2025 Rapport KDou. Tous droits réservés.</p>
     <p>Fait pour la SAE 1.02 | SAE 1.05</p>
 </footer>
 </body>
