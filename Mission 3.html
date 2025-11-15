@@ -109,7 +109,7 @@
                     INNER JOIN Clientele AS Cl ON C.CodePostal = Cl.CodePostal AND C.CodeCli <> Cl.CodeCli
                     ORDER BY C.Ville, C.CodePostal;
                     </p></div>
-                <img class="img-requête" src="Assets/Images/M3REF1.png" alt="résultat-sql">
+                <img class="img-requête" src="Assets/Images/SPREF1.png" alt="résultat-sql">
             </div>
             <div class="requête">
                 <div class="titre">Indicateur 2 : Clients et fournisseurs dans le même pays</div>
@@ -125,7 +125,7 @@
                     INNER JOIN Pays AS P ON C.NoPays = P.NoPays)
                     INNER JOIN Fournisseur AS F ON F.NoPays = C.NoPays;
                 </p></div>
-            <img class="img-requête" src="Assets/Images/M3REF1.png" alt="résultat-sql">
+            <img class="img-requête" src="Assets/Images/SPREF2.png" alt="résultat-sql">
             </div>
             <div class="requête">
                 <div class="titre">Indicateur 3 : Optimisation des trajets selon quantité commandée</div>
@@ -140,7 +140,7 @@
                     WHERE DC.Quantité > 50;
                     <p>
                 </p></div>
-                <img class="img-requête" src="Assets/Images/M3REF1.png" alt="résultat-sql">
+                <img class="img-requête" src="Assets/Images/SPREF3.png" alt="résultat-sql">
             </div>
             <div class="requête">
                 <div class="titre">Indicateur 4 : Optimisation et l'organisation des trajet en avion et bateau en dehors de l’UE.</div>
@@ -152,14 +152,8 @@
                     WHERE DC.Quantité < 10 AND Pays.UE = "Hors"
                     <p>
                 </p></div>
-            <img class="img-requête" src="Assets/Images/M3REF1.png" alt="résultat-sql">
+            <img class="img-requête" src="Assets/Images/SPREF4.png" alt="résultat-sql">
             </div>
-
-
-
-
-
-
 </section>
 
 

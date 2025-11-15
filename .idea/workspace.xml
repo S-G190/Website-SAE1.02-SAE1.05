@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c7e9e0e-f1d8-4ccd-9b85-67a85c3ab197" name="Changes" comment="debut m3 et finitions conclusion">
+    <list default="true" id="8c7e9e0e-f1d8-4ccd-9b85-67a85c3ab197" name="Changes" comment="m3 finitions">
+      <change afterPath="$PROJECT_DIR$/Assets/Images/SPREF3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Images/SPREF4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conclusion.html" beforeDir="false" afterPath="$PROJECT_DIR$/Conclusion.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mission 3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mission 3.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +80,7 @@
       <workItem from="1763141281135" duration="510000" />
       <workItem from="1763141796905" duration="592000" />
       <workItem from="1763207905636" duration="853000" />
-      <workItem from="1763220469698" duration="9379000" />
+      <workItem from="1763220469698" duration="10046000" />
     </task>
     <task id="LOCAL-00001" summary="ajout nouvelles req">
       <option name="closed" value="true" />
@@ -121,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763234622517</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="m3 finitions">
+      <option name="closed" value="true" />
+      <created>1763235544259</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1763235544259</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +141,7 @@
     <MESSAGE value="changement de texte" />
     <MESSAGE value="finitions m1 et m2" />
     <MESSAGE value="debut m3 et finitions conclusion" />
-    <option name="LAST_COMMIT_MESSAGE" value="debut m3 et finitions conclusion" />
+    <MESSAGE value="m3 finitions" />
+    <option name="LAST_COMMIT_MESSAGE" value="m3 finitions" />
   </component>
 </project>
